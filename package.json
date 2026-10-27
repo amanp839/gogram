@@ -1,0 +1,17 @@
+{
+  "name": "gogram-web",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": { "dev": "next dev", "build": "next build", "start": "next start", "lint": "eslint" },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.57.0",
+    "next": "latest",
+    "openai": "^5.20.0",
+    "react": "latest",
+    "react-dom": "latest"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0", "@types/react": "^19.0.0", "@types/react-dom": "^19.0.0",
+    "eslint": "^9.0.0", "eslint-config-next": "latest", "typescript": "^5.0.0"
+  }
+}
