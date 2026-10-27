@@ -206,11 +206,25 @@ export default function Home() {
 
     <section className="trust section"><div><span>01</span><h3>Thoughtfully planned</h3><p>Stays and experiences selected for your kind of escape.</p></div><div><span>02</span><h3>Local at heart</h3><p>Discover Wayanad with respect for the people and place.</p></div><div><span>03</span><h3>Plan with a human</h3><p>Get help through WhatsApp before you book.</p></div></section>
 
-    <footer className="footer"><div className="footer-top"><a className="logo footer-logo" href="#"><img
-  src="/image/gogram-logo.png"
-  alt="GoGram Travels"
-  className="logo-mark"
-/><span>gogram<small>WAYANAD, YOUR WAY</small></span></a><div><div className="section-kicker">YOUR NEXT STORY IS OUT THERE</div><h2>Go a little <em>further.</em></h2></div><a className="btn btn-light" href={`https://wa.me/919778174859?text=${encodeURIComponent("Hi GoGram! Let's plan a Wayanad getaway.")}`} target="_blank" rel="noreferrer">Let&apos;s plan it ↗</a></div><div className="footer-bottom"><span>© 2026 GoGram · Wayanad, Kerala</span><span>Travel gently. Leave no trace.</span></div></footer>
+    <footer className="footer">
+      <div className="footer-top">
+        <a className="logo footer-logo" href="#" aria-label="GoGram Travels home">
+          <img src="/image/gogram-logo.png" alt="" className="logo-mark" />
+          <span>gogram<small>WAYANAD, YOUR WAY</small></span>
+        </a>
+        <div className="footer-copy">
+          <div className="section-kicker">YOUR NEXT STORY IS OUT THERE</div>
+          <h2>Wayanad is waiting.<br/><em>Let&apos;s go.</em></h2>
+          <p>Find a stay, follow a trail, or plan a slower weekend with the GoGram team.</p>
+        </div>
+        <a className="btn btn-light" href={`https://wa.me/919778174859?text=${encodeURIComponent("Hi GoGram! Let's plan a Wayanad getaway.")}`} target="_blank" rel="noreferrer">Plan with GoGram ↗</a>
+      </div>
+      <div className="footer-bottom">
+        <span>© 2026 GoGram Travels · Wayanad, Kerala</span>
+        <a href="#">Back to top ↑</a>
+        <span>Travel gently. Leave no trace.</span>
+      </div>
+    </footer>
 
     {bookingListing && <div className="modal-backdrop" onClick={() => setBookingListing(null)}><section className="booking-modal" onClick={e=>e.stopPropagation()}><button className="modal-close" onClick={() => setBookingListing(null)} aria-label="Close">×</button><div className="section-kicker">YOUR NEXT ADVENTURE</div><h2>Enquire about <em>{bookingListing.title}</em></h2><p className="muted">Sample from ₹{bookingListing.price_inr.toLocaleString("en-IN")} · {bookingListing.duration}. This form does not confirm a reservation or charge you.</p><form onSubmit={submitBooking} className="booking-form"><label>Full name<input name="name" required placeholder="Your name"/></label><label>Email<input name="email" type="email" placeholder="you@example.com"/></label><label>Phone / WhatsApp<input name="phone" required type="tel" placeholder="+91…"/></label><label>Preferred date<input name="date" required type="date" min={new Date().toISOString().slice(0,10)}/></label><label>Guests<select name="guests" defaultValue="2">{[1,2,3,4,5,6,7,8,9,10].map(n=><option key={n} value={n}>{n} {n===1?"guest":"guests"}</option>)}</select></label><button className="btn btn-dark" type="submit">Send booking request ↗</button>{bookingStatus&&<p className="form-result">{bookingStatus}</p>}<a className="modal-whatsapp" href={whatsappUrl(bookingListing)} target="_blank" rel="noreferrer">Or continue on WhatsApp ↗</a></form></section></div>}
 
@@ -264,8 +278,3 @@ export default function Home() {
     </main>
   );
 }
-git add .
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/amanp839/gogram.git
-git push -u origin main
